@@ -1,0 +1,6 @@
+# robots.txt for Delasa Forever Shih Tzu
+User-agent: *
+Allow: /
+Sitemap: https://yourdomain.com/sitemap.xml
+Disallow: /images/unsplash/
+Disallow: /videos/temp/

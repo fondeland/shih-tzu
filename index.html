@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Delasa Forever Shih Tzu | Premium Shih Tzu Puppies for Sale in USA & Canada</title>
+  <meta name="description" content="Find healthy, adorable Shih Tzu puppies for sale in the USA and Canada. Raised with love by Carolina Delsa, an ethical breeder with 10+ years experience. Vet-checked, vaccinated, family-raised puppies ready for loving homes.">
+  <meta name="keywords" content="Shih Tzu puppies for sale, Shih Tzu breeder USA, teacup Shih Tzu puppies, Shih Tzu puppies near me, Shih Tzu breeder Canada, ethical Shih Tzu breeder">
+  <meta name="author" content="Carolina Delsa">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://delasaforevershihtzu.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Fix for puppy card images - full image visible without cropping */
+    .puppy-card .image-wrapper {
+      width: 100%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .puppy-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .puppy-card .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--gold);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+    
+    /* Testimonial Card with Images - Responsive */
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #4a3629;
+      margin-bottom: 16px;
+      font-style: italic;
+      flex: 1;
+    }
+    
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 4px;
+    }
+    
+    .testimonial-puppy {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    
+    /* Mobile Menu Close Icon Styles */
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .mobile-menu {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .mobile-menu-close {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1001;
+      color: var(--brown-dark);
+    }
+    
+    /* SEO Content Sections */
+    .seo-content {
+      background: var(--white);
+      border-radius: 48px;
+      padding: 48px;
+      margin: 50px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .seo-content h2 {
+      color: var(--brown-dark);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    
+    .seo-content h3 {
+      color: var(--soft-brown);
+      margin: 25px 0 15px;
+      font-size: 1.3rem;
+    }
+    
+    .seo-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: #5a4a3c;
+    }
+    
+    .seo-content ul {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    
+    .seo-content li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    
+    /* Footer Styles */
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .footer-links a {
+      color: var(--brown-dark);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    .payment-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .payment-icons i {
+      font-size: 2rem;
+      color: var(--soft-brown);
+    }
+    
+    .service-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .service-dropdown select {
+      padding: 10px 20px;
+      border-radius: 40px;
+      border: 1px solid var(--gold-light);
+      background: var(--white);
+      color: var(--brown-dark);
+      font-family: inherit;
+      cursor: pointer;
+      font-size: 0.9rem;
+      min-width: 200px;
+    }
+    
+    .service-dropdown select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 14px;
+        background: var(--white);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        box-shadow: var(--shadow-md);
+        z-index: 1000;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .nav-container {
+        position: relative;
+      }
+      
+      .seo-content {
+        padding: 28px 20px;
+      }
+      .seo-content h2 {
+        font-size: 1.5rem;
+      }
+      .seo-content h3 {
+        font-size: 1.2rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .payment-icons {
+        justify-content: center;
+      }
+      .testimonial-avatar {
+        width: 70px;
+        height: 70px;
+      }
+      .puppy-card .puppy-name {
+        font-size: 1.3rem;
+      }
+      .puppy-card .card-content {
+        padding: 18px 16px 20px;
+      }
+      .puppy-card .button-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .puppy-card .button-group button {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .seo-content h2 {
+        font-size: 1.3rem;
+      }
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+      }
+      .puppy-card .puppy-name {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreedingOrganization",
+    "name": "Delasa Forever Shih Tzu",
+    "url": "https://delasaforevershihtzu.com",
+    "description": "Ethical Shih Tzu breeder serving USA and Canada with healthy, vet-checked puppies.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Carolina Delsa"
+    },
+    "areaServed": ["United States", "Canada"]
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Delasa<span> Forever Shih Tzu</span></div>
+      <div class="nav-buttons">
+        <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+        <div class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="available.html">Available Puppies</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Healthy & Adorable Shih Tzu Puppies Ready For Loving Homes</h1>
+      <p>Raised with love, vet-checked, vaccinated, and ready to become part of your family. Serving families across the USA and Canada with premium Shih Tzu puppies.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-primary" onclick="location.href='available.html'">View Available Puppies</button>
+        <button class="btn-primary" onclick="openReserveModal()">Reserve a Puppy</button>
+        <button class="btn-outline" onclick="openModal('contactModal')">Contact Carolina</button>
+      </div>
+    </section>
+
+    <!-- Featured Puppies -->
+    <section>
+      <h2 style="text-align:center">✨ Our Featured Shih Tzu Puppies</h2>
+      <p style="text-align:center; margin-bottom: 30px;">Meet our adorable Shih Tzu puppies looking for their forever homes</p>
+      <div class="grid-3" id="featuredGrid"></div>
+    </section>
+
+    <!-- About Preview with Profile Picture -->
+    <section style="background: var(--cream); border-radius: 48px; padding: 48px;">
+      <div class="flex-between" style="flex-wrap:wrap; gap:30px;">
+        <div style="flex:1; text-align: center;">
+          <img src="/images/profile.jpeg" alt="Carolina Delsa - ethical Shih Tzu breeder with 10+ years experience" style="width: 100%; max-width: 240px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: var(--shadow-sm);" loading="lazy">
+        </div>
+        <div style="flex:2">
+          <h2>Ethical Breeding, Family Raised</h2>
+          <p>With over 10 years of dedicated experience, I personally raise every Shih Tzu puppy in my home. My puppies are not just pets  they are family members from day one. Each litter is carefully planned with health, temperament, and the breed standard as top priorities.</p>
+          <button class="btn-outline" onclick="location.href='about.html'">Learn More About Carolina →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+      <h2 style="text-align:center">Why Choose Delasa Forever Shih Tzu</h2>
+      <div class="grid-3" style="margin-top:32px">
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-stethoscope" style="font-size:2rem;color:var(--gold)"></i><h3>Vet Checked</h3><p>Full health examinations by licensed veterinarians</p></div>
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-syringe" style="font-size:2rem;color:var(--gold)"></i><h3>Vaccinated</h3><p>Age-appropriate vaccinations and deworming</p></div>
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-heartbeat" style="font-size:2rem;color:var(--gold)"></i><h3>Healthy Bloodlines</h3><p>OFA certified parents with genetic testing</p></div>
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-paw" style="font-size:2rem;color:var(--gold)"></i><h3>Socialized</h3><p>Raised with children and other pets</p></div>
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-truck" style="font-size:2rem;color:var(--gold)"></i><h3>Safe Delivery</h3><p>Climate-controlled transport across USA & Canada</p></div>
+        <div class="puppy-card" style="padding:24px;text-align:center"><i class="fas fa-headset" style="font-size:2rem;color:var(--gold)"></i><h3>Lifetime Support</h3><p>Ongoing breeder support for your puppy's entire life</p></div>
+      </div>
+    </section>
+
+    <!-- SEO RICH CONTENT -->
+    <div class="seo-content">
+      <h2>Shih Tzu Puppies for Sale in USA and Canada</h2>
+      <p>Welcome to Delasa Forever Shih Tzu, your trusted source for healthy, well-bred Shih Tzu puppies. As a <strong>reputable Shih Tzu breeder</strong> with over 10 years of experience, I am committed to raising puppies that are not only beautiful but also healthy, well-tempered, and properly socialized.</p>
+      
+      <h3>Why Shih Tzu Puppies Make Wonderful Family Pets</h3>
+      <p>Shih Tzus are one of the most beloved toy breeds in North America. Known for their affectionate nature, playful personality, and loyal companionship, Shih Tzus make excellent family dogs. They adapt well to apartment living, are great with children when properly socialized, and thrive on human companionship.</p>
+      
+      <h3>Our Commitment to Ethical Breeding</h3>
+      <p>At Delasa Forever Shih Tzu, I follow strict ethical breeding practices. All my breeding dogs undergo comprehensive health testing including OFA patella evaluations, CERF eye examinations, cardiac screenings, and DNA testing for hereditary conditions.</p>
+      
+      <h3>What Makes Our Shih Tzu Puppies Special</h3>
+      <ul>
+        <li><strong>Home-raised, not kennel-raised</strong>  Puppies are born and raised in my living room</li>
+        <li><strong>Early socialization</strong>  Exposed to household sounds, gentle handling, and positive experiences</li>
+        <li><strong>Health guarantee</strong>  2 year genetic health guarantee on every puppy</li>
+        <li><strong>Vet records included</strong>  Complete vaccination and deworming records</li>
+        <li><strong>Microchipped</strong>  Each puppy is microchipped before going home</li>
+        <li><strong>Starter kit provided</strong>  Includes food, blanket with litter scent, and toy</li>
+      </ul>
+    </div>
+
+    <!-- Testimonials Preview WITH PICTURES -->
+    <section>
+      <div class="flex-between"><h2>Happy Families ❤️</h2><button class="btn-outline" onclick="location.href='testimonials.html'">View All Testimonials</button></div>
+      <div class="grid-3" id="testimonialPreview" style="margin-top:24px"></div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section>
+      <h2>Frequently Asked Questions About Shih Tzu Puppies</h2>
+      <div id="faqAccordion"></div>
+    </section>
+    
+    <!-- Delivery -->
+    <section style="background:white; border-radius:32px; padding:32px;">
+      <h3>🚚 Safe Delivery Across USA & Canada</h3>
+      <p>I offer safe, climate-controlled delivery for all my Shih Tzu puppies. Whether you choose nanny delivery to your door or airport pickup, I personally coordinate every step to ensure your puppy arrives safely and stress-free.</p>
+    </section>
+    
+    <section style="text-align:center">
+      <button class="btn-primary" onclick="openModal('appointmentModal')">📅 Book an Appointment to Meet Our Puppies</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="available.html">Available Puppies</a>
+        </div>
+        
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa Accepted"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard Accepted"></i>
+          <i class="fab fa-cc-amex" title="American Express Accepted"></i>
+          <i class="fab fa-cc-discover" title="Discover Accepted"></i>
+          <i class="fab fa-paypal" title="PayPal Accepted"></i>
+          <i class="fas fa-lock" title="Secure Payment"></i>
+        </div>
+      </div>
+      
+      <!-- Service Area Dropdown -->
+      <div style="text-align: center; margin: 20px 0;">
+        <div class="service-dropdown">
+          <select id="serviceAreaSelect">
+            <option value="">📍 Service Areas (USA & Canada)</option>
+            <option value="USA">🇺🇸 United States (All 50 States)</option>
+            <option value="Canada">🇨🇦 Canada (All Provinces)</option>
+            <option value="states">--- US States ---</option>
+            <option value="NY">New York</option>
+            <option value="CA">California</option>
+            <option value="TX">Texas</option>
+            <option value="FL">Florida</option>
+            <option value="IL">Illinois</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="OH">Ohio</option>
+            <option value="GA">Georgia</option>
+            <option value="NC">North Carolina</option>
+            <option value="MI">Michigan</option>
+            <option value="NJ">New Jersey</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="AZ">Arizona</option>
+            <option value="MA">Massachusetts</option>
+            <option value="provinces">--- Canadian Provinces ---</option>
+            <option value="ON">Ontario</option>
+            <option value="BC">British Columbia</option>
+            <option value="QC">Quebec</option>
+            <option value="AB">Alberta</option>
+            <option value="MB">Manitoba</option>
+          </select>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Safe delivery available to all locations listed above</p>
+      </div>
+      
+      <hr style="border-color: var(--gold-light); margin: 20px 0;">
+      <p>© 2025 Delasa Forever Shih Tzu – Ethical Shih Tzu Breeder</p>
+      <p>📍 Serving USA & Canada | ✉️ <a href="mailto:carolinadelsa542@gmail.com" style="color: var(--brown-dark);">carolinadelsa542@gmail.com</a> | 📞 <a href="tel:+13322484763" style="color: var(--brown-dark);">+1 (332) 248 4763</a> | <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank" style="color: var(--brown-dark);">Facebook</a></p>
+    </div>
+  </footer>
+
+  <!-- Sticky Contact -->
+  <div class="sticky-contact">
+    <a href="https://wa.me/13322484763" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+13322484763"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:carolinadelsa542@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <!-- MODALS -->
+  <div id="puppyDetailModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="dynamicDetailContent"></div>
+      <div style="display:flex; gap:16px; margin-top:20px;">
+        <button class="btn-primary" id="detailReserveBtn">Reserve This Puppy</button>
+        <button class="btn-outline" id="detailContactBtn">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="reserveModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Reserve a Puppy</h3>
+      <div id="reserveSuccessMsg" class="success-message" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Reservation request sent! I'll contact you soon.</div>
+      <div id="reserveErrorMsg" class="error-message" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly.</div>
+      <form id="reserveForm">
+        <input type="text" id="reserveName" placeholder="Full name" required>
+        <input type="email" id="reserveEmail" placeholder="Email" required>
+        <input type="tel" id="reservePhone" placeholder="Phone">
+        <input type="text" id="reservePuppyName" placeholder="Puppy interested in">
+        <textarea id="reserveMsg" rows="2" placeholder="Message"></textarea>
+        <button type="submit" class="btn-primary">Submit Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="appointmentModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Book Appointment</h3>
+      <div id="apptSuccessMsg" class="success-message" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Appointment request sent! I'll confirm soon.</div>
+      <div id="apptErrorMsg" class="error-message" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly.</div>
+      <form id="appointmentForm">
+        <input type="text" id="apptName" placeholder="Full name" required>
+        <input type="email" id="apptEmail" placeholder="Email" required>
+        <input type="tel" id="apptPhone" placeholder="Phone">
+        <input type="date" id="apptDate">
+        <input type="time" id="apptTime">
+        <textarea id="apptMsg" placeholder="Message"></textarea>
+        <button type="submit" class="btn-primary">Request Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Contact Carolina Delsa</h3>
+      <div id="contactPopupSuccessMsg" class="success-message" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Message sent! I'll reply within 24 hours.</div>
+      <div id="contactPopupErrorMsg" class="error-message" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly.</div>
+      <form id="contactPopupForm">
+        <input type="text" id="contactPopupName" placeholder="Your Name" required>
+        <input type="email" id="contactPopupEmail" placeholder="Email" required>
+        <textarea id="contactPopupMsg" rows="4" placeholder="Your message..." required></textarea>
+        <button class="btn-primary" style="width:100%">Send Message</button>
+      </form>
+      <hr style="margin: 20px 0;">
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/13322484763" target="_blank">+1 (332) 248 4763</a> &nbsp; <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank">Facebook Page</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function renderFeatured() {
+      const container = document.getElementById('featuredGrid');
+      if(!container) return;
+      if(typeof puppies === 'undefined') {
+        console.error('Puppies not loaded yet');
+        return;
+      }
+      const available = puppies.filter(p => p.avail !== 'Reserved').slice(0,6);
+      container.innerHTML = available.map(p => `
+        <div class="puppy-card">
+          <div class="image-wrapper">
+            <img src="${p.img}" alt="${p.name} - Shih Tzu puppy for sale" loading="lazy">
+            <span class="badge">${p.avail}</span>
+          </div>
+          <div class="card-content">
+            <h3 class="puppy-name">${p.name}</h3>
+            <div class="puppy-meta">
+              <span><i class="fas fa-venus-mars"></i> ${p.gender}</span>
+              <span><i class="fas fa-birthday-cake"></i> ${p.age}</span>
+            </div>
+            <div class="description">${p.personality}</div>
+            <div class="button-group">
+              <button class="btn-outline" onclick="openPuppyDetail(${p.id})">View Details</button>
+              <button class="btn-primary" onclick="openReserveModal('${p.name.replace(/'/g, "\\'")}')">Reserve Puppy</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function renderTestiPreview() {
+      const container = document.getElementById('testimonialPreview');
+      if(container) {
+        container.innerHTML = `
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah - happy Shih Tzu customer" loading="lazy">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"We found our perfect Shih Tzu puppy! Carolina was so helpful and caring throughout the entire process."</div>
+            <div class="testimonial-name">Sarah & Tom</div>
+            <div class="testimonial-puppy">🐾 Adopted Luna</div>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="David - happy Shih Tzu owner" loading="lazy">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"The most reputable Shih Tzu breeder we found. Our puppy arrived healthy, happy, and well-socialized."</div>
+            <div class="testimonial-name">David L.</div>
+            <div class="testimonial-puppy">🐾 Adopted Milo</div>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jessica - happy Shih Tzu family" loading="lazy">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"Carolina truly cares about her puppies. The delivery was seamless and our puppy is thriving!"</div>
+            <div class="testimonial-name">Jessica R.</div>
+            <div class="testimonial-puppy">🐾 Adopted Daisy</div>
+          </div>
+        `;
+      }
+    }
+    
+    function buildFAQ() {
+      const faqDiv = document.getElementById('faqAccordion');
+      if(!faqDiv) return;
+      const faqData = [
+        {q:"Are Shih Tzu puppies good with children?", a:"Yes! Shih Tzus are known for being excellent family dogs. They are affectionate, patient, and gentle with children when properly socialized."},
+        {q:"How much do Shih Tzu puppies cost?", a:"Ethically bred Shih Tzu puppies typically range from $1,500 to $4,000 depending on bloodline, color, and location. Contact me for current pricing on available litters."},
+        {q:"Do Shih Tzu puppies shed?", a:"Shih Tzus are considered low-shedding dogs. Their hair grows continuously like human hair, making them a good choice for people with allergies."},
+        {q:"How do I reserve a Shih Tzu puppy?", a:"A deposit holds your chosen puppy. The remaining balance is due at pickup or before delivery. Contact me to discuss available puppies and reservation process."},
+        {q:"Do you ship Shih Tzu puppies to my state?", a:"Yes! I offer safe, climate-controlled delivery across all 50 US states and Canadian provinces."},
+        {q:"What health guarantees do you offer?", a:"Every puppy comes with a 2-year genetic health guarantee. All breeding dogs are health tested for luxating patella, eye diseases, cardiac conditions, and genetic disorders."}
+      ];
+      faqDiv.innerHTML = faqData.map((item,i)=>`<div class="accordion-item"><div class="accordion-question">${item.q} <i class="fas fa-chevron-down"></i></div><div class="accordion-answer"><p>${item.a}</p></div></div>`).join('');
+      document.querySelectorAll('.accordion-question').forEach(q => q.addEventListener('click', function(){ let ans = this.nextElementSibling; ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px"; }));
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if(typeof puppies !== 'undefined') {
+          renderFeatured();
+        }
+      }, 100);
+      renderTestiPreview();
+      buildFAQ();
+      
+      // Mobile menu toggle with close icon
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileClose = document.getElementById('mobileMenuClose');
+      const navLinks = document.getElementById('navLinks');
+      
+      if (mobileBtn && mobileClose && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          navLinks.classList.add('show');
+          mobileBtn.style.display = 'none';
+          mobileClose.style.display = 'block';
+        });
+        
+        mobileClose.addEventListener('click', () => {
+          navLinks.classList.remove('show');
+          mobileBtn.style.display = 'block';
+          mobileClose.style.display = 'none';
+        });
+        
+        document.addEventListener('click', (event) => {
+          if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && !mobileClose.contains(event.target)) {
+            navLinks.classList.remove('show');
+            mobileBtn.style.display = 'block';
+            mobileClose.style.display = 'none';
+          }
+        });
+      }
+      
+      const serviceSelect = document.getElementById('serviceAreaSelect');
+      if(serviceSelect) {
+        serviceSelect.addEventListener('change', function() {
+          if(this.value && this.value !== 'USA' && this.value !== 'Canada' && this.value !== 'states' && this.value !== 'provinces') {
+            alert(`Great! I offer safe delivery to ${this.options[this.selectedIndex].text}. Contact me to learn more about available Shih Tzu puppies in your area.`);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

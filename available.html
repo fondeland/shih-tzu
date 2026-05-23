@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Shih Tzu Puppies | Delasa Forever Shih Tzu</title>
+  <meta name="description" content="Browse our available Shih Tzu puppies for sale in Canada and the US. Healthy, vet-checked, and raised with love by Carolina Delsa.">
+  <meta name="keywords" content="Shih Tzu puppies for sale, available Shih Tzu puppies, Shih Tzu breeder Canada, Shih Tzu breeder US">
+  <meta name="author" content="Carolina Delsa">
+ <!-- Preconnect to Google Fonts (Reduces DNS lookup delay) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Load Inter with display=swap (Prevents FOIT/Blank Text) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+      background: var(--cream);
+      padding: 20px;
+      border-radius: 60px;
+      justify-content: center;
+    }
+    .filter-bar select, .filter-bar input {
+      background: white;
+      border: 1px solid var(--gold-light);
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      min-width: 140px;
+      cursor: pointer;
+    }
+    .trust-section {
+      background: var(--cream);
+      border-radius: 48px;
+      padding: 48px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .trust-item i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    
+    /* FIXED: Puppy Card Image Styling - No Cropping */
+    .puppy-card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .puppy-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* FIXED: Image wrapper that contains the image properly */
+    .puppy-card .image-wrapper {
+      width: 100%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    /* FIXED: Image styling - shows full image without cropping */
+    .puppy-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .puppy-card .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--gold);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+    
+    .puppy-card .card-content {
+      padding: 22px 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .puppy-card .puppy-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+    
+    .puppy-card .puppy-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--soft-brown);
+      border-bottom: 1px solid var(--gold-light);
+      padding-bottom: 10px;
+    }
+    
+    .puppy-card .puppy-meta i {
+      margin-right: 5px;
+      color: var(--gold);
+    }
+    
+    .puppy-card .description {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #5a4a3c;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    
+    .puppy-card .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .puppy-card .button-group button {
+      flex: 1;
+      text-align: center;
+      padding: 10px 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .image-wrapper {
+      position: relative;
+    }
+    
+    @media (max-width: 768px) {
+      .filter-bar {
+        border-radius: 32px;
+        padding: 16px;
+        gap: 12px;
+      }
+      .filter-bar select, .filter-bar input {
+        width: 100%;
+      }
+      .trust-section {
+        padding: 32px 20px;
+      }
+      .puppy-card .puppy-name {
+        font-size: 1.3rem;
+      }
+      .puppy-card .card-content {
+        padding: 18px 16px 20px;
+      }
+      .puppy-card .button-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .puppy-card .button-group button {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .puppy-card .puppy-name {
+        font-size: 1.2rem;
+      }
+      .puppy-card .description {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Delasa<span> Forever Shih Tzu</span></div>
+      <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="available.html">Available Puppies</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Available Shih Tzu Puppies</h1>
+      <p>Find your perfect furry companion raised with love and care by Carolina Delsa.</p>
+      <button class="btn-primary" onclick="openReserveModal()">Reserve Your Puppy</button>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <select id="filterGender">
+        <option value="">All Genders</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
+      <select id="filterAvail">
+        <option value="">All Status</option>
+        <option value="Available">Available</option>
+        <option value="Reserved">Reserved</option>
+      </select>
+      <input type="text" id="searchName" placeholder="Search by name...">
+    </div>
+
+    <!-- Puppy Grid -->
+    <div id="availableGrid" class="grid-3"></div>
+
+    <!-- Trust Section -->
+    <div class="trust-section">
+      <h2>Why Families Trust Delasa Forever Shih Tzu</h2>
+      <div class="trust-grid">
+        <div class="trust-item"><i class="fas fa-stethoscope"></i><h3>Vet Checked</h3><p>Full health examinations</p></div>
+        <div class="trust-item"><i class="fas fa-syringe"></i><h3>Vaccinated</h3><p>Up-to-date shots</p></div>
+        <div class="trust-item"><i class="fas fa-file-signature"></i><h3>Health Guarantee</h3><p>1-year genetic guarantee</p></div>
+        <div class="trust-item"><i class="fas fa-truck"></i><h3>Safe Delivery</h3><p>Canada & US delivery</p></div>
+        <div class="trust-item"><i class="fas fa-headset"></i><h3>Lifetime Support</h3><p>Always here for you</p></div>
+        <div class="trust-item"><i class="fas fa-heart"></i><h3>Family Raised</h3><p>Loving home environment</p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Delasa Forever Shih Tzu – Ethical Shih Tzu Breeder</p>
+      <p>📍 Serving Canada & United States | ✉️ <a href="mailto:carolinadelsa542@gmail.com" style="color: var(--brown-dark);">carolinadelsa542@gmail.com</a> | 📞 <a href="tel:+13322484763" style="color: var(--brown-dark);">+1 (332) 248 4763</a> | <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank" style="color: var(--brown-dark);">Facebook</a></p>
+    </div>
+  </footer>
+
+  <div class="sticky-contact">
+    <a href="https://wa.me/13322484763" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+13322484763"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:carolinadelsa542@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <!-- MODALS -->
+  <div id="puppyDetailModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="dynamicDetailContent"></div>
+      <div style="display: flex; gap: 16px; margin-top: 20px;">
+        <button class="btn-primary" id="detailReserveBtn">Reserve This Puppy</button>
+        <button class="btn-outline" id="detailContactBtn">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="reserveModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Reserve a Puppy</h3>
+      <div id="reserveSuccessMsg" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Reservation request sent! I'll contact you soon.</div>
+      <div id="reserveErrorMsg" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly.</div>
+      <form id="reserveForm">
+        <input type="text" id="reserveName" placeholder="Full name" required>
+        <input type="email" id="reserveEmail" placeholder="Email" required>
+        <input type="tel" id="reservePhone" placeholder="Phone">
+        <input type="text" id="reservePuppyName" placeholder="Puppy interested in">
+        <textarea id="reserveMsg" rows="2" placeholder="Message"></textarea>
+        <button type="submit" class="btn-primary">Submit Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Contact Carolina Delsa</h3>
+      <div id="contactPopupSuccessMsg" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Message sent! I'll reply within 24 hours.</div>
+      <div id="contactPopupErrorMsg" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly.</div>
+      <form id="contactPopupForm">
+        <input type="text" id="contactPopupName" placeholder="Your Name" required>
+        <input type="email" id="contactPopupEmail" placeholder="Email" required>
+        <textarea id="contactPopupMsg" placeholder="Message" required></textarea>
+        <button class="btn-primary">Send Message</button>
+      </form>
+      <hr style="margin: 20px 0;">
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/13322484763" target="_blank">+1 (332) 248 4763</a> &nbsp; <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank">Facebook Page</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Wait for DOM and ensure puppies array is available from script.js
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (typeof puppies !== 'undefined') {
+          renderAvailablePuppies();
+        } else {
+          console.error('Puppies array not loaded - check script.js');
+          document.getElementById('availableGrid').innerHTML = '<p style="text-align:center; padding:40px;">Loading puppies...</p>';
+        }
+      }, 100);
+      
+      const genderFilter = document.getElementById('filterGender');
+      const availFilter = document.getElementById('filterAvail');
+      const searchInput = document.getElementById('searchName');
+      
+      if (genderFilter) genderFilter.addEventListener('change', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
+      if (availFilter) availFilter.addEventListener('change', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
+      if (searchInput) searchInput.addEventListener('input', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
+    });
+    
+    function renderAvailablePuppies() {
+      if (typeof puppies === 'undefined') {
+        console.error('Puppies array not available');
+        return;
+      }
+      
+      const gender = document.getElementById('filterGender')?.value || '';
+      const avail = document.getElementById('filterAvail')?.value || '';
+      const search = document.getElementById('searchName')?.value.toLowerCase() || '';
+      
+      let filtered = puppies.filter(p => 
+        (gender ? p.gender === gender : true) &&
+        (avail ? p.avail === avail : true) &&
+        (search ? p.name.toLowerCase().includes(search) : true)
+      );
+      
+      const container = document.getElementById('availableGrid');
+      if (!container) return;
+      
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="text-align:center; padding:40px; grid-column:1/-1;">No puppies match your filters. Try adjusting your search criteria.</p>';
+        return;
+      }
+      
+      container.innerHTML = filtered.map(p => `
+        <div class="puppy-card">
+          <div class="image-wrapper">
+            <img src="${p.img}" alt="${p.name} - ${p.gender} Shih Tzu puppy, ${p.age}">
+            <span class="badge">${p.avail}</span>
+          </div>
+          <div class="card-content">
+            <h3 class="puppy-name">${p.name}</h3>
+            <div class="puppy-meta">
+              <span><i class="fas fa-venus-mars"></i> ${p.gender}</span>
+              <span><i class="fas fa-birthday-cake"></i> ${p.age}</span>
+            </div>
+            <div class="description">${p.personality}</div>
+            <div class="button-group">
+              <button class="btn-outline" onclick="openPuppyDetail(${p.id})">View Details</button>
+              <button class="btn-primary" onclick="openReserveModal('${p.name.replace(/'/g, "\\'")}')">Reserve Puppy</button>
+              <button class="btn-outline" onclick="openModal('contactModal')">Contact Us</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

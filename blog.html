@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shih Tzu Blog | Expert Tips, Care Guides & Breed Info | Delasa Forever Shih Tzu</title>
+  <meta name="description" content="Expert advice on Shih Tzu puppies – training, grooming, health, nutrition, and breeder insights. 20+ articles to help you raise a happy, healthy Shih Tzu in the USA and Canada.">
+  <meta name="keywords" content="Shih Tzu care, Shih Tzu training, Shih Tzu grooming, Shih Tzu health, puppy tips, teacup Shih Tzu, Shih Tzu breeders USA, Shih Tzu breeders Canada">
+  <meta name="author" content="Carolina Delsa">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blog-search { margin-bottom: 30px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .blog-search input, .blog-search select { max-width: 250px; padding: 12px 20px; border-radius: 40px; border: 1px solid var(--gold-light); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px; margin-top: 40px; }
+    .blog-card { background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .blog-card img { width: 100%; height: 220px; object-fit: cover; }
+    .blog-card-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .blog-category { display: inline-block; background: var(--gold-light); color: var(--brown-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 12px; align-self: flex-start; }
+    .blog-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+    .blog-title a { color: var(--brown-dark); text-decoration: none; transition: color 0.2s; }
+    .blog-title a:hover { color: var(--gold); }
+    .blog-meta { font-size: 0.75rem; color: var(--soft-brown); margin-bottom: 12px; display: flex; gap: 16px; }
+    .blog-excerpt { font-size: 0.9rem; color: #5a4a3c; margin-bottom: 16px; line-height: 1.5; flex: 1; }
+    .pagination { display: flex; justify-content: center; gap: 12px; margin-top: 50px; flex-wrap: wrap; }
+    .pagination a { background: var(--white); border: 1px solid var(--gold-light); padding: 8px 16px; border-radius: 40px; text-decoration: none; color: var(--brown-dark); transition: 0.2s; cursor: pointer; }
+    .pagination a.active, .pagination a:hover { background: var(--gold); color: white; border-color: var(--gold); }
+    @media (max-width: 768px) { .blog-card img { height: 180px; } .blog-title { font-size: 1.1rem; } .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">Delasa<span> Forever Shih Tzu</span></div>
+    <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="available.html">Available Puppies</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <h1>Shih Tzu Care & Breed Insights</h1>
+    <p>Expert advice from Carolina Delsa – 10+ years of ethical breeding experience serving the USA and Canada.</p>
+  </section>
+
+  <div class="blog-search">
+    <input type="text" id="searchInput" placeholder="🔍 Search articles..." onkeyup="filterPosts()">
+    <select id="categoryFilter" onchange="filterPosts()">
+      <option value="all">All Categories</option>
+      <option value="Care">Care & Health</option>
+      <option value="Training">Training</option>
+      <option value="Grooming">Grooming</option>
+      <option value="Nutrition">Nutrition</option>
+      <option value="Breed Info">Breed Info</option>
+    </select>
+  </div>
+
+  <div id="blogGrid" class="blog-grid">
+    <!-- Post 1 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/shih-tzu-puppy-guide.jpeg" alt="Shih Tzu puppy sitting happily - complete care guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-1-shihtzu-care-guide.html">Complete Shih Tzu Care Guide for New Owners</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Mar 15, 2025</span> <span><i class="far fa-clock"></i> 8 min read</span></div>
+        <p class="blog-excerpt">Everything you need to know about raising a happy, healthy Shih Tzu puppy – from feeding schedules to vet visits.</p>
+        <a href="blog-posts/post-1-shihtzu-care-guide.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="blog-card" data-category="Grooming">
+      <img src="/images/shi-tzu-grooming.jpeg" alt="Shih Tzu getting groomed by professional - grooming tutorial">
+      <div class="blog-card-content">
+        <span class="blog-category">Grooming</span>
+        <h2 class="blog-title"><a href="blog-posts/post-2-shihtzu-grooming-101.html">Shih Tzu Grooming 101: Step-by-Step Tutorial</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Mar 10, 2025</span> <span><i class="far fa-clock"></i> 9 min read</span></div>
+        <p class="blog-excerpt">Learn how to properly groom your Shih Tzu at home – brushing, bathing, ear cleaning, and coat maintenance.</p>
+        <a href="blog-posts/post-2-shihtzu-grooming-101.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="blog-card" data-category="Nutrition">
+      <img src="/images/Shih-tzu-foods.jpeg" alt="Shih Tzu eating healthy dog food from bowl - nutrition guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Nutrition</span>
+        <h2 class="blog-title"><a href="blog-posts/post-3-best-food-for-shihtzu.html">Best Food for Shih Tzus: Nutrition Guide</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Mar 5, 2025</span> <span><i class="far fa-clock"></i> 8 min read</span></div>
+        <p class="blog-excerpt">What to feed your Shih Tzu at every life stage – puppy, adult, and senior. Recommended brands and portions.</p>
+        <a href="blog-posts/post-3-best-food-for-shihtzu.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="blog-card" data-category="Training">
+      <img src="/images/Shih-tzu-potty-training.jpeg" alt="Shih Tzu puppy on grass during potty training session">
+      <div class="blog-card-content">
+        <span class="blog-category">Training</span>
+        <h2 class="blog-title"><a href="blog-posts/post-4-potty-training.html">Potty Training Your Shih Tzu Puppy</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 28, 2025</span> <span><i class="far fa-clock"></i> 8 min read</span></div>
+        <p class="blog-excerpt">Effective housebreaking techniques that work for Shih Tzus. Positive reinforcement methods that get results fast.</p>
+        <a href="blog-posts/post-4-potty-training.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 5 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/shi-tzu-male-and-female.jpeg" alt="Male and female Shih Tzu puppies together - gender comparison">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-5-male-vs-female-shihtzu.html">Male vs Female Shih Tzu: Which is Right for You?</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 20, 2025</span> <span><i class="far fa-clock"></i> 7 min read</span></div>
+        <p class="blog-excerpt">Comparing temperament, size, grooming needs, and personality between male and female Shih Tzus.</p>
+        <a href="blog-posts/post-5-male-vs-female-shihtzu.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 6 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/Shih-tzu-health-issues.jpeg" alt="Healthy Shih Tzu at veterinarian checkup - health guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-6-health-issues.html">Common Shih Tzu Health Issues & Prevention</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 15, 2025</span> <span><i class="far fa-clock"></i> 9 min read</span></div>
+        <p class="blog-excerpt">Understanding eye problems, breathing issues, and joint health – plus how to prevent them.</p>
+        <a href="blog-posts/post-6-health-issues.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 7 -->
+    <div class="blog-card" data-category="Training">
+      <img src="/images/Shih-tzu-potty-training.jpeg" alt="Shih Tzu puppy meeting other dogs during socialization">
+      <div class="blog-card-content">
+        <span class="blog-category">Training</span>
+        <h2 class="blog-title"><a href="blog-posts/post-7-socialization.html">How to Socialize Your Shih Tzu Puppy</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 10, 2025</span> <span><i class="far fa-clock"></i> 7 min read</span></div>
+        <p class="blog-excerpt">Proper socialization prevents anxiety and aggression. Tips for introducing your puppy to people, dogs, and new environments.</p>
+        <a href="blog-posts/post-7-socialization.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 8 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/Shih-tzu-coat-types.jpeg" alt="Beautiful Shih Tzu with flowing coat - coat type guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-8-coat-types.html">Shih Tzu Coat Types: What to Expect</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 5, 2025</span> <span><i class="far fa-clock"></i> 5 min read</span></div>
+        <p class="blog-excerpt">Understanding the difference between a smooth coat and a heavy coat – grooming needs and maintenance.</p>
+        <a href="blog-posts/post-8-coat-types.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 9 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/shi-tzu-male-and-female.jpeg" alt="Very small Shih Tzu puppy - teacup size facts and myths">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-9-teacup-shihtzu.html">Teacup Shih Tzu: Facts vs Myths</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 28, 2025</span> <span><i class="far fa-clock"></i> 8 min read</span></div>
+        <p class="blog-excerpt">What you need to know before buying a teacup Shih Tzu – health risks, ethical concerns, and realistic expectations.</p>
+        <a href="blog-posts/post-9-teacup-shihtzu.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 10 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/shi-tzu-exercise.jpeg" alt="Shih Tzu enjoying a walk outdoors - exercise guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-10-exercise-needs.html">Shih Tzu Exercise Needs: Daily Routine</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 22, 2025</span> <span><i class="far fa-clock"></i> 5 min read</span></div>
+        <p class="blog-excerpt">How much exercise does a Shih Tzu really need? Indoor activities and outdoor walks for a healthy pup.</p>
+        <a href="blog-posts/post-10-exercise-needs.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 11 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/Shih-tzu-traveling.jpeg" alt="Shih Tzu in travel carrier ready for adventure">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-11-traveling.html">Traveling With Your Shih Tzu</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 18, 2025</span> <span><i class="far fa-clock"></i> 6 min read</span></div>
+        <p class="blog-excerpt">Tips for car rides, flights, and hotel stays with your Shih Tzu – plus travel essentials.</p>
+        <a href="blog-posts/post-11-traveling.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 12 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/shih-tzu-puppy-guide.jpeg" alt="Happy friendly Shih Tzu with family - temperament guide">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-12-temperament.html">Shih Tzu Temperament: What to Expect</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 12, 2025</span> <span><i class="far fa-clock"></i> 6 min read</span></div>
+        <p class="blog-excerpt">Understanding the Shih Tzu personality – affectionate, loyal, and great with families and children.</p>
+        <a href="blog-posts/post-12-temperament.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 13 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/shih-tzu-dental-care.jpeg" alt="Shih Tzu getting teeth brushed for dental health">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-13-dental-care.html">Dental Care for Shih Tzus</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 8, 2025</span> <span><i class="far fa-clock"></i> 5 min read</span></div>
+        <p class="blog-excerpt">Preventing dental disease – brushing techniques, dental chews, and professional cleanings.</p>
+        <a href="blog-posts/post-13-dental-care.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 14 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/Shih-tzu-health-issues.jpeg" alt="Shih Tzu with healthy skin and coat - allergy management">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-14-allergy-management.html">Shih Tzu Allergy Management</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 5, 2025</span> <span><i class="far fa-clock"></i> 7 min read</span></div>
+        <p class="blog-excerpt">Identifying food and environmental allergies – symptoms, treatments, and hypoallergenic options.</p>
+        <a href="blog-posts/post-14-allergy-management.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 15 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/profile.jpeg" alt="Ethical Shih Tzu breeder with healthy puppies">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-15-choose-breeder.html">How to Choose a Reputable Shih Tzu Breeder</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 28, 2024</span> <span><i class="far fa-clock"></i> 9 min read</span></div>
+        <p class="blog-excerpt">Red flags to avoid and green flags to look for when searching for an ethical Shih Tzu breeder.</p>
+        <a href="blog-posts/post-15-choose-breeder.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 16 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/shih-tzu-dental-care.jpeg" alt="Shih Tzu puppy teething on safe chew toy">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-16-teething-guide.html">Shih Tzu Puppy Teething Guide</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 20, 2024</span> <span><i class="far fa-clock"></i> 5 min read</span></div>
+        <p class="blog-excerpt">What to expect during teething – safe chew toys, soothing techniques, and dental care.</p>
+        <a href="blog-posts/post-16-teething-guide.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 17 -->
+    <div class="blog-card" data-category="Training">
+      <img src="/images/shih-tzu-toy.jpeg" alt="Shih Tzu puppy playing with safe dog toys">
+      <div class="blog-card-content">
+        <span class="blog-category">Training</span>
+        <h2 class="blog-title"><a href="blog-posts/post-17-best-toys.html">Best Toys for Shih Tzu Puppies</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 15, 2024</span> <span><i class="far fa-clock"></i> 6 min read</span></div>
+        <p class="blog-excerpt">Interactive toys, chew toys, and puzzles that keep your Shih Tzu entertained and mentally stimulated.</p>
+        <a href="blog-posts/post-17-best-toys.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 18 -->
+    <div class="blog-card" data-category="Breed Info">
+      <img src="/images/breading-earthic.jpeg" alt="Ethically bred Shih Tzu puppies with mother dog">
+      <div class="blog-card-content">
+        <span class="blog-category">Breed Info</span>
+        <h2 class="blog-title"><a href="blog-posts/post-18-breeding-ethics.html">Shih Tzu Breeding Ethics: Our Philosophy</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 10, 2024</span> <span><i class="far fa-clock"></i> 7 min read</span></div>
+        <p class="blog-excerpt">Why we prioritize health testing, genetic diversity, and loving home environments for all our puppies.</p>
+        <a href="blog-posts/post-18-breeding-ethics.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 19 -->
+    <div class="blog-card" data-category="Training">
+      <img src="/images/shi-tzu-grooming.jpeg" alt="Shih Tzu meeting cat peacefully - multi-pet introduction">
+      <div class="blog-card-content">
+        <span class="blog-category">Training</span>
+        <h2 class="blog-title"><a href="blog-posts/post-19-introducing-pets.html">Introducing Shih Tzu to Other Pets</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 5, 2024</span> <span><i class="far fa-clock"></i> 6 min read</span></div>
+        <p class="blog-excerpt">Step-by-step guide to safely introducing your new Shih Tzu to cats, dogs, and other household animals.</p>
+        <a href="blog-posts/post-19-introducing-pets.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Post 20 -->
+    <div class="blog-card" data-category="Care">
+      <img src="/images/shih-tzu-adult-care.jpeg" alt="Senior Shih Tzu living happy golden years">
+      <div class="blog-card-content">
+        <span class="blog-category">Care</span>
+        <h2 class="blog-title"><a href="blog-posts/post-20-senior-care.html">Senior Shih Tzu Care: Golden Years Guide</a></h2>
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 1, 2024</span> <span><i class="far fa-clock"></i> 8 min read</span></div>
+        <p class="blog-excerpt">Adjusting diet, exercise, and vet care for your aging Shih Tzu – keeping them comfortable and happy.</p>
+        <a href="blog-posts/post-20-senior-care.html" style="color: var(--gold); font-weight: 500;">Read More →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <a onclick="changePage(1)">1</a>
+    <a onclick="changePage(2)">2</a>
+    <a onclick="changePage(3)">3</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Delasa Forever Shih Tzu – Ethical Shih Tzu Breeder</p>
+    <p>📍 Serving USA & Canada | ✉️ <a href="mailto:carolinadelsa542@gmail.com" style="color: var(--brown-dark);">carolinadelsa542@gmail.com</a> | 📞 <a href="tel:+13322484763" style="color: var(--brown-dark);">+1 (332) 248 4763</a> | <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank" style="color: var(--brown-dark);">Facebook</a></p>
+  </div>
+</footer>
+
+<div class="sticky-contact">
+  <a href="https://wa.me/13322484763" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+13322484763"><i class="fas fa-phone-alt"></i></a>
+  <a href="mailto:carolinadelsa542@gmail.com"><i class="fas fa-envelope"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+
+<!-- Contact Modal with Success/Error Messages -->
+<div id="contactModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Contact Carolina Delsa</h3>
+    <div id="contactPopupSuccessMsg" style="display:none; background:#4CAF50; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">✅ Message sent! I'll reply within 24 hours.</div>
+    <div id="contactPopupErrorMsg" style="display:none; background:#f44336; color:white; padding:12px; border-radius:12px; margin-bottom:15px;">❌ Something went wrong. Please email me directly at carolinadelsa542@gmail.com</div>
+    <form id="contactPopupForm">
+      <input type="text" id="contactPopupName" placeholder="Your Name" required>
+      <input type="email" id="contactPopupEmail" placeholder="Email Address" required>
+      <textarea id="contactPopupMsg" rows="4" placeholder="Your message..." required></textarea>
+      <button type="submit" class="btn-primary" style="width:100%">Send Message</button>
+    </form>
+    <hr style="margin: 20px 0;">
+    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/13322484763" target="_blank">+1 (332) 248 4763</a> &nbsp;|&nbsp; <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank">Facebook Page</a></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Simple filter functionality
+  function filterPosts() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const category = document.getElementById('categoryFilter').value;
+    const posts = document.querySelectorAll('.blog-card');
+    
+    posts.forEach(post => {
+      const title = post.querySelector('.blog-title a').innerText.toLowerCase();
+      const excerpt = post.querySelector('.blog-excerpt').innerText.toLowerCase();
+      const postCategory = post.getAttribute('data-category');
+      
+      const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+      const matchesCategory = category === 'all' || postCategory === category;
+      
+      if (matchesSearch && matchesCategory) {
+        post.style.display = 'flex';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+
+  // Simple pagination
+  let currentPage = 1;
+  const postsPerPage = 9;
+  const allPosts = document.querySelectorAll('.blog-card');
+
+  function showPage(page) {
+    const start = (page - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    
+    allPosts.forEach((post, index) => {
+      if (index >= start && index < end) {
+        post.style.display = 'flex';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+    
+    currentPage = page;
+    
+    // Update active pagination button
+    document.querySelectorAll('.pagination a').forEach(btn => {
+      btn.classList.remove('active');
+      if (parseInt(btn.innerText) === page) {
+        btn.classList.add('active');
+      }
+    });
+  }
+
+  function changePage(page) {
+    showPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Initialize
+  showPage(1);
+</script>
+</body>
+</html>

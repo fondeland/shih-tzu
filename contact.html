@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Delasa Forever Shih Tzu</title>
+  <meta name="description" content="Contact Delasa Forever Shih Tzu – reach out via WhatsApp, phone, email, or Facebook to inquire about available Shih Tzu puppies in Canada and the US.">
+  <meta name="keywords" content="contact Shih Tzu breeder, Shih Tzu puppies for sale Canada, Shih Tzu puppies for sale US, Carolina Delsa">
+  <meta name="author" content="Carolina Delsa">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-info-premium { 
+      display: flex; 
+      gap: 30px; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      margin: 40px 0; 
+    }
+    
+    .contact-card {
+      background: var(--white);
+      padding: 32px 24px;
+      border-radius: 32px;
+      text-align: center;
+      flex: 1;
+      min-width: 210px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Make everything inside the card unselectable but clickable */
+    .contact-card * {
+      pointer-events: none;
+    }
+    
+    .contact-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .contact-card h3 {
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+    
+    .contact-card .contact-value {
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin: 12px 0;
+      font-size: 1rem;
+      word-break: break-all;
+    }
+    
+    .contact-card p {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--soft-brown);
+    }
+    
+    .form-container { 
+      background: var(--cream); 
+      border-radius: 48px; 
+      padding: 40px; 
+      margin-top: 40px; 
+    }
+    
+    .form-container h2 { 
+      text-align: center; 
+      margin-bottom: 24px; 
+    }
+    
+    .success-message { 
+      background: #4CAF50; 
+      color: white; 
+      padding: 12px 20px; 
+      border-radius: 40px; 
+      text-align: center; 
+      margin-bottom: 20px; 
+      display: none; 
+    }
+    
+    .error-message { 
+      background: #f44336; 
+      color: white; 
+      padding: 12px 20px; 
+      border-radius: 40px; 
+      text-align: center; 
+      margin-bottom: 20px; 
+      display: none; 
+    }
+    
+    .city-field { 
+      display: none; 
+      transition: all 0.3s ease; 
+    }
+    
+    .city-field.show { 
+      display: block; 
+    }
+    
+    @media (max-width: 768px) { 
+      .form-container { 
+        padding: 24px; 
+      }
+      .contact-card { 
+        padding: 24px 20px; 
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Delasa<span> Forever Shih Tzu</span></div>
+      <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="available.html">Available Puppies</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Get In Touch With Carolina Delsa</h1>
+      <p>Have questions about available Shih Tzu puppies in Canada or the US? I'm here to help!</p>
+    </section>
+
+    <!-- Contact Cards - ENTIRE CARD CLICKABLE using onclick -->
+    <div class="contact-info-premium">
+      <!-- WhatsApp Card - Entire card clickable -->
+      <div class="contact-card" onclick="window.open('https://wa.me/13322484763', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <div class="contact-value">+1 (332) 248 4763</div>
+        <p>Click to chat instantly</p>
+      </div>
+      
+      <!-- Phone Call Card - Entire card clickable -->
+      <div class="contact-card" onclick="window.location.href='tel:+13322484763'">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call / SMS</h3>
+        <div class="contact-value">+1 (332) 248 4763</div>
+        <p>Mon-Sat 9am-6pm EST</p>
+      </div>
+      
+      <!-- Email Card - Entire card clickable -->
+      <div class="contact-card" onclick="window.location.href='mailto:carolinadelsa542@gmail.com'">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <div class="contact-value">carolinadelsa542@gmail.com</div>
+        <p>We reply within 24 hours</p>
+      </div>
+      
+      <!-- Facebook Card - Entire card clickable -->
+      <div class="contact-card" onclick="window.open('https://www.facebook.com/profile.php?id=61589336344346', '_blank')">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook</h3>
+        <div class="contact-value">Delasa Forever Shih Tzu</div>
+        <p>Follow us for updates</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-container">
+      <div id="contactSuccessMsg" class="success-message">✅ Message sent successfully! I'll get back to you soon.</div>
+      <div id="contactErrorMsg" class="error-message">❌ Something went wrong. Please try again or email me directly.</div>
+      <h2>Send Me a Message</h2>
+      <form id="directContactForm">
+        <input type="text" id="contactName" placeholder="Your Name" required>
+        <input type="email" id="contactEmail" placeholder="Email Address" required>
+        <input type="tel" id="contactPhone" placeholder="Phone Number (optional)">
+        
+        <select id="contactLocation" required style="width: 100%; padding: 12px; border-radius: 24px; border: 1px solid #EADBCE; background-color: var(--cream); margin-bottom: 14px;">
+          <option value="">Select Your Location *</option>
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="Other">Other</option>
+        </select>
+        
+        <div id="cityField" class="city-field">
+          <input type="text" id="contactCity" placeholder="Enter your city *">
+        </div>
+        
+        <textarea id="contactMsg" rows="5" placeholder="Your message..."></textarea>
+        <button type="submit" class="btn-primary" style="width: 100%;">Send Message →</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Delasa Forever Shih Tzu – Ethical Shih Tzu Breeder</p>
+      <p>📍 Serving Canada & United States | ✉️ <a href="mailto:carolinadelsa542@gmail.com" style="color: var(--brown-dark);">carolinadelsa542@gmail.com</a> | 📞 <a href="tel:+13322484763" style="color: var(--brown-dark);">+1 (332) 248 4763</a> | <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank" style="color: var(--brown-dark);">Facebook</a></p>
+    </div>
+  </footer>
+
+  <div class="sticky-contact">
+    <a href="https://wa.me/13322484763" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+13322484763"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:carolinadelsa542@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Contact Us</h3>
+      <form id="contactPopupForm">
+        <input type="text" id="contactPopupName" placeholder="Your Name">
+        <input type="email" id="contactPopupEmail" placeholder="Email">
+        <textarea id="contactPopupMsg" placeholder="Message"></textarea>
+        <button class="btn-primary">Send Message</button>
+      </form>
+      <hr>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/13322484763" target="_blank">+1 (332) 248 4763</a> &nbsp; <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=61589336344346" target="_blank">Facebook Page</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Show/hide city field based on location selection
+    const locationSelect = document.getElementById('contactLocation');
+    const cityField = document.getElementById('cityField');
+    const cityInput = document.getElementById('contactCity');
+
+    if (locationSelect) {
+      locationSelect.addEventListener('change', function() {
+        if (this.value === 'United States' || this.value === 'Canada') {
+          cityField.classList.add('show');
+          cityInput.required = true;
+        } else {
+          cityField.classList.remove('show');
+          cityInput.required = false;
+          cityInput.value = '';
+        }
+      });
+    }
+
+    // Formspree endpoint for main contact form
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvzowre';
+    
+    const contactForm = document.getElementById('directContactForm');
+    const contactSuccessMsg = document.getElementById('contactSuccessMsg');
+    const contactErrorMsg = document.getElementById('contactErrorMsg');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        contactSuccessMsg.style.display = 'none';
+        contactErrorMsg.style.display = 'none';
+        
+        const formData = new FormData();
+        formData.append('name', document.getElementById('contactName').value);
+        formData.append('email', document.getElementById('contactEmail').value);
+        formData.append('phone', document.getElementById('contactPhone').value);
+        formData.append('location', document.getElementById('contactLocation').value);
+        formData.append('city', document.getElementById('contactCity').value);
+        formData.append('message', document.getElementById('contactMsg').value);
+        formData.append('_subject', 'New Contact Message - Delasa Forever Shih Tzu');
+        formData.append('_replyto', document.getElementById('contactEmail').value);
+        
+        try {
+          const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          
+          if (response.ok) {
+            contactSuccessMsg.style.display = 'block';
+            contactForm.reset();
+            cityField.classList.remove('show');
+            setTimeout(() => { contactSuccessMsg.style.display = 'none'; }, 5000);
+          } else {
+            contactErrorMsg.style.display = 'block';
+            setTimeout(() => { contactErrorMsg.style.display = 'none'; }, 5000);
+          }
+        } catch (error) {
+          contactErrorMsg.style.display = 'block';
+          setTimeout(() => { contactErrorMsg.style.display = 'none'; }, 5000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
