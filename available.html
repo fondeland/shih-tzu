@@ -7,12 +7,11 @@
   <meta name="description" content="Browse our available Shih Tzu puppies for sale in Canada and the US. Healthy, vet-checked, and raised with love by Carolina Delsa.">
   <meta name="keywords" content="Shih Tzu puppies for sale, available Shih Tzu puppies, Shih Tzu breeder Canada, Shih Tzu breeder US">
   <meta name="author" content="Carolina Delsa">
- <!-- Preconnect to Google Fonts (Reduces DNS lookup delay) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Load Inter with display=swap (Prevents FOIT/Blank Text) -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Preconnect to Google Fonts (Reduces DNS lookup delay) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load Inter with display=swap (Prevents FOIT/Blank Text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -71,7 +70,6 @@
       box-shadow: var(--shadow-md);
     }
     
-    /* FIXED: Image wrapper that contains the image properly */
     .puppy-card .image-wrapper {
       width: 100%;
       background: var(--cream);
@@ -79,9 +77,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      position: relative;
     }
     
-    /* FIXED: Image styling - shows full image without cropping */
     .puppy-card img {
       width: 100%;
       height: auto;
@@ -109,34 +107,33 @@
       flex-direction: column;
     }
     
-    .puppy-card .puppy-name {
-      font-size: 1.5rem;
+    .puppy-card .puppy-title {
+      font-size: 1.3rem;
       font-weight: 700;
       font-family: 'Playfair Display', serif;
       color: var(--brown-dark);
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
     
-    .puppy-card .puppy-meta {
+    .puppy-card .puppy-detail {
       display: flex;
-      gap: 16px;
-      margin-bottom: 14px;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
       font-size: 0.85rem;
       color: var(--soft-brown);
-      border-bottom: 1px solid var(--gold-light);
-      padding-bottom: 10px;
     }
     
-    .puppy-card .puppy-meta i {
-      margin-right: 5px;
+    .puppy-card .puppy-detail i {
+      width: 20px;
       color: var(--gold);
     }
     
     .puppy-card .description {
       font-size: 0.9rem;
-      line-height: 1.4;
+      line-height: 1.5;
       color: #5a4a3c;
-      margin-bottom: 20px;
+      margin: 12px 0 16px;
       flex: 1;
     }
     
@@ -158,8 +155,16 @@
       transition: all 0.2s;
     }
     
-    .image-wrapper {
-      position: relative;
+    .info-badge {
+      display: inline-block;
+      background: var(--gold-light);
+      color: var(--brown-dark);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
     }
     
     @media (max-width: 768px) {
@@ -174,8 +179,8 @@
       .trust-section {
         padding: 32px 20px;
       }
-      .puppy-card .puppy-name {
-        font-size: 1.3rem;
+      .puppy-card .puppy-title {
+        font-size: 1.2rem;
       }
       .puppy-card .card-content {
         padding: 18px 16px 20px;
@@ -190,8 +195,8 @@
     }
     
     @media (max-width: 480px) {
-      .puppy-card .puppy-name {
-        font-size: 1.2rem;
+      .puppy-card .puppy-title {
+        font-size: 1.1rem;
       }
       .puppy-card .description {
         font-size: 0.85rem;
@@ -224,17 +229,12 @@
 
     <!-- Filter Bar -->
     <div class="filter-bar">
-      <select id="filterGender">
-        <option value="">All Genders</option>
-        <option value="Female">Female</option>
-        <option value="Male">Male</option>
-      </select>
       <select id="filterAvail">
         <option value="">All Status</option>
         <option value="Available">Available</option>
         <option value="Reserved">Reserved</option>
       </select>
-      <input type="text" id="searchName" placeholder="Search by name...">
+      <input type="text" id="searchName" placeholder="Search by personality...">
     </div>
 
     <!-- Puppy Grid -->
@@ -327,11 +327,9 @@
         }
       }, 100);
       
-      const genderFilter = document.getElementById('filterGender');
       const availFilter = document.getElementById('filterAvail');
       const searchInput = document.getElementById('searchName');
       
-      if (genderFilter) genderFilter.addEventListener('change', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
       if (availFilter) availFilter.addEventListener('change', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
       if (searchInput) searchInput.addEventListener('input', function() { if (typeof renderAvailablePuppies === 'function') renderAvailablePuppies(); });
     });
@@ -342,14 +340,12 @@
         return;
       }
       
-      const gender = document.getElementById('filterGender')?.value || '';
       const avail = document.getElementById('filterAvail')?.value || '';
       const search = document.getElementById('searchName')?.value.toLowerCase() || '';
       
       let filtered = puppies.filter(p => 
-        (gender ? p.gender === gender : true) &&
         (avail ? p.avail === avail : true) &&
-        (search ? p.name.toLowerCase().includes(search) : true)
+        (search ? p.name.toLowerCase().includes(search) || p.personality.toLowerCase().includes(search) : true)
       );
       
       const container = document.getElementById('availableGrid');
@@ -363,16 +359,22 @@
       container.innerHTML = filtered.map(p => `
         <div class="puppy-card">
           <div class="image-wrapper">
-            <img src="${p.img}" alt="${p.name} - ${p.gender} Shih Tzu puppy, ${p.age}">
+            <img src="${p.img}" alt="Adorable Shih Tzu puppy" loading="lazy">
             <span class="badge">${p.avail}</span>
           </div>
           <div class="card-content">
-            <h3 class="puppy-name">${p.name}</h3>
-            <div class="puppy-meta">
-              <span><i class="fas fa-venus-mars"></i> ${p.gender}</span>
-              <span><i class="fas fa-birthday-cake"></i> ${p.age}</span>
+            <div class="puppy-title">Adorable Shih Tzu Puppy</div>
+            <div class="puppy-detail">
+              <i class="fas fa-calendar-week"></i>
+              <span>Age: ${p.age}</span>
             </div>
-            <div class="description">${p.personality}</div>
+            <div class="puppy-detail">
+              <i class="fas fa-weight-scale"></i>
+              <span>Est. Adult Size: 9-12 lbs</span>
+            </div>
+            <div class="description">
+              ${p.personality}
+            </div>
             <div class="button-group">
               <button class="btn-outline" onclick="openPuppyDetail(${p.id})">View Details</button>
               <button class="btn-primary" onclick="openReserveModal('${p.name.replace(/'/g, "\\'")}')">Reserve Puppy</button>

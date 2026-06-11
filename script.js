@@ -6,7 +6,7 @@ const FALLBACK_EMAIL = 'carolinadelsa542@gmail.com';
 
 const puppies = [
     { 
-      id:1, name:"Luna", gender:"Female", age:"10 weeks", personality:"Playful and cuddly, loves children", avail:"Available", 
+      id:1, name:"Luna", gender:"Female", age:"8 weeks", personality:"Playful and cuddly, loves children", avail:"Available", 
       img:"images/puppies/luna.jpeg", 
       gallery: [
         "images/puppies/luna-1.jpeg",
@@ -14,10 +14,10 @@ const puppies = [
         "images/puppies/luna-3.jpeg"
       ],
       video: "videos/luna.mp4",
-      vax:"Up-to-date on vaccines, dewormed", health:"1-year genetic health guarantee", story:"Luna is a sweetheart with a royal coat." 
+      vax:"Up-to-date on vaccines, dewormed", health:"1-year genetic health guarantee", story:"This adorable puppy is a sweetheart with a royal coat." 
     },
     { 
-      id:2, name:"Milo", gender:"Male", age:"12 weeks", personality:"Adventurous & loyal", avail:"Available", 
+      id:2, name:"Milo", gender:"Male", age:"8 weeks", personality:"Adventurous & loyal", avail:"Available", 
       img:"images/puppies/milo.jpeg", 
       gallery: [
         "images/puppies/milo-1.jpeg",
@@ -25,10 +25,10 @@ const puppies = [
         "images/puppies/milo-3.jpeg"
       ],
       video: "videos/milo.mp4",
-      vax:"Fully vaccinated, microchipped", health:"Health guarantee + vet records", story:"Milo loves to play fetch." 
+      vax:"Fully vaccinated, microchipped", health:"Health guarantee + vet records", story:"This playful puppy loves to play fetch and explore." 
     },
     { 
-      id:3, name:"Coco", gender:"Female", age:"9 weeks", personality:"Gentle lapdog", avail:"Reserved", 
+      id:3, name:"Coco", gender:"Female", age:"8 weeks", personality:"Gentle lapdog", avail:"Reserved", 
       img:"images/puppies/coco.jpeg", 
       gallery: [
         "images/puppies/coco-1.jpeg",
@@ -36,7 +36,7 @@ const puppies = [
         "images/puppies/coco-3.jpeg"
       ],
       video: "videos/coco.mp4",
-      vax:"First shots", health:"Parents OFA tested", story:"Coco loves snuggles." 
+      vax:"First shots", health:"Parents OFA tested", story:"This sweet puppy loves snuggling and being held." 
     },
     { 
       id:4, name:"Oliver", gender:"Male", age:"8 weeks", personality:"Energetic and smart", avail:"Available", 
@@ -47,10 +47,10 @@ const puppies = [
         "images/puppies/oliver-3.jpeg"
       ],
       video: "videos/oliver.mp4",
-      vax:"Vaccinated & dewormed", health:"Full health guarantee", story:"Oliver is ready to bring joy." 
+      vax:"Vaccinated & dewormed", health:"Full health guarantee", story:"This energetic puppy is ready to bring joy to your family." 
     },
     { 
-      id:5, name:"Daisy", gender:"Female", age:"11 weeks", personality:"Sweet and gentle, loves to cuddle", avail:"Available", 
+      id:5, name:"Daisy", gender:"Female", age:"8 weeks", personality:"Sweet and gentle, loves to cuddle", avail:"Available", 
       img:"images/puppies/daisy.jpeg", 
       gallery: [
         "images/puppies/daisy-1.jpeg",
@@ -58,10 +58,10 @@ const puppies = [
         "images/puppies/daisy-3.jpeg"
       ],
       video: "videos/daisy.mp4",
-      vax:"Up-to-date vaccines", health:"Health guarantee included", story:"Daisy is a little princess who enjoys belly rubs." 
+      vax:"Up-to-date vaccines", health:"Health guarantee included", story:"This gentle little princess enjoys belly rubs and cuddles." 
     },
     { 
-      id:6, name:"Teddy", gender:"Male", age:"9 weeks", personality:"Playful and outgoing", avail:"Available", 
+      id:6, name:"Teddy", gender:"Male", age:"8 weeks", personality:"Playful and outgoing", avail:"Available", 
       img:"images/puppies/teddy.jpeg", 
       gallery: [
         "images/puppies/teddy-1.jpeg",
@@ -69,7 +69,7 @@ const puppies = [
         "images/puppies/teddy-3.jpeg"
       ],
       video: "videos/teddy.mp4",
-      vax:"Vaccinated & microchipped", health:"1-year health guarantee", story:"Teddy is full of energy and loves kids." 
+      vax:"Vaccinated & microchipped", health:"1-year health guarantee", story:"This outgoing puppy is full of energy and loves kids." 
     }
   ];
 
@@ -95,22 +95,21 @@ function openPuppyDetail(puppyId) {
     const firstImage = p.gallery[0] || '';
     const videoHTML = p.video ? `
       <div style="margin: 16px 0;">
-        <h4>🐾 Watch ${p.name} playing</h4>
+        <h4>🐾 Watch this playful puppy</h4>
         <video controls style="width: 100%; border-radius: 24px; box-shadow: var(--shadow-sm);" poster="${firstImage}">
           <source src="${p.video}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--soft-brown);">👇 Click play to see ${p.name} in action!</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--soft-brown);">👇 Click play to see this adorable puppy in action!</p>
       </div>
     ` : '';
     
     detailDiv.innerHTML = `
-      <h2>${p.name}</h2>
+      <h2>Adorable Shih Tzu Puppy</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">
         ${galleryHTML}
       </div>
       ${videoHTML}
-      <p><strong>Gender:</strong> ${p.gender}</p>
       <p><strong>Age:</strong> ${p.age}</p>
       <p><strong>Personality:</strong> ${p.personality}</p>
       <p><strong>Vaccination:</strong> ${p.vax}</p>
@@ -279,12 +278,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile menu toggle
+  // Mobile menu toggle with close icon
   const mobileBtn = document.getElementById('mobileMenuBtn');
-  if (mobileBtn) {
+  const mobileClose = document.getElementById('mobileMenuClose');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (mobileBtn && mobileClose && navLinks) {
     mobileBtn.addEventListener('click', () => {
-      const navLinks = document.getElementById('navLinks');
-      if (navLinks) navLinks.classList.toggle('show');
+      navLinks.classList.add('show');
+      mobileBtn.style.display = 'none';
+      mobileClose.style.display = 'block';
+    });
+    
+    mobileClose.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      mobileBtn.style.display = 'block';
+      mobileClose.style.display = 'none';
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && !mobileClose.contains(event.target)) {
+        navLinks.classList.remove('show');
+        mobileBtn.style.display = 'block';
+        mobileClose.style.display = 'none';
+      }
     });
   }
 
@@ -295,17 +313,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href === currentPage) link.classList.add('active');
     else if (currentPage === '' && href === 'index.html') link.classList.add('active');
   });
-
-});
-// This code already works correctly - no changes needed
-mobileBtn.addEventListener('click', () => {
-  navLinks.classList.add('show');
-  mobileBtn.style.display = 'none';
-  mobileClose.style.display = 'block';  // Only shows on mobile
-});
-
-mobileClose.addEventListener('click', () => {
-  navLinks.classList.remove('show');
-  mobileBtn.style.display = 'block';
-  mobileClose.style.display = 'none';
 });

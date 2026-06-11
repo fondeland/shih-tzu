@@ -15,7 +15,23 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Fix for puppy card images - full image visible without cropping */
-    .puppy-card .image-wrapper {
+    .home-puppy-card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .home-puppy-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .home-puppy-card .image-wrapper {
       width: 100%;
       background: var(--cream);
       display: flex;
@@ -25,14 +41,14 @@
       position: relative;
     }
     
-    .puppy-card img {
+    .home-puppy-card img {
       width: 100%;
       height: auto;
       object-fit: contain;
       display: block;
     }
     
-    .puppy-card .badge {
+    .home-puppy-card .badge {
       position: absolute;
       top: 16px;
       right: 16px;
@@ -43,6 +59,61 @@
       font-size: 0.75rem;
       font-weight: 600;
       z-index: 2;
+    }
+    
+    .home-puppy-card .card-content {
+      padding: 22px 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .home-puppy-card .puppy-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: var(--brown-dark);
+      margin-bottom: 12px;
+    }
+    
+    .home-puppy-card .puppy-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      color: var(--soft-brown);
+    }
+    
+    .home-puppy-card .puppy-detail i {
+      width: 20px;
+      color: var(--gold);
+    }
+    
+    .home-puppy-card .description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #5a4a3c;
+      margin: 12px 0 16px;
+      flex: 1;
+    }
+    
+    .home-puppy-card .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .home-puppy-card .button-group button {
+      flex: 1;
+      text-align: center;
+      padding: 10px 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
     
     /* Testimonial Card with Images - Responsive */
@@ -268,17 +339,17 @@
         width: 70px;
         height: 70px;
       }
-      .puppy-card .puppy-name {
-        font-size: 1.3rem;
+      .home-puppy-card .puppy-title {
+        font-size: 1.2rem;
       }
-      .puppy-card .card-content {
+      .home-puppy-card .card-content {
         padding: 18px 16px 20px;
       }
-      .puppy-card .button-group {
+      .home-puppy-card .button-group {
         flex-direction: column;
         gap: 10px;
       }
-      .puppy-card .button-group button {
+      .home-puppy-card .button-group button {
         width: 100%;
       }
     }
@@ -291,8 +362,8 @@
         width: 60px;
         height: 60px;
       }
-      .puppy-card .puppy-name {
-        font-size: 1.2rem;
+      .home-puppy-card .puppy-title {
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -349,7 +420,7 @@
       </div>
     </section>
 
-    <!-- Featured Puppies -->
+    <!-- Featured Puppies - UPDATED: No names, no genders, all 8 weeks -->
     <section>
       <h2 style="text-align:center">✨ Our Featured Shih Tzu Puppies</h2>
       <p style="text-align:center; margin-bottom: 30px;">Meet our adorable Shih Tzu puppies looking for their forever homes</p>
@@ -364,7 +435,7 @@
         </div>
         <div style="flex:2">
           <h2>Ethical Breeding, Family Raised</h2>
-          <p>With over 10 years of dedicated experience, I personally raise every Shih Tzu puppy in my home. My puppies are not just pets  they are family members from day one. Each litter is carefully planned with health, temperament, and the breed standard as top priorities.</p>
+          <p>With over 10 years of dedicated experience, I personally raise every Shih Tzu puppy in my home. My puppies are not just pets – they are family members from day one. Each litter is carefully planned with health, temperament, and the breed standard as top priorities.</p>
           <button class="btn-outline" onclick="location.href='about.html'">Learn More About Carolina →</button>
         </div>
       </div>
@@ -396,12 +467,12 @@
       
       <h3>What Makes Our Shih Tzu Puppies Special</h3>
       <ul>
-        <li><strong>Home-raised, not kennel-raised</strong>  Puppies are born and raised in my living room</li>
-        <li><strong>Early socialization</strong>  Exposed to household sounds, gentle handling, and positive experiences</li>
-        <li><strong>Health guarantee</strong>  2 year genetic health guarantee on every puppy</li>
-        <li><strong>Vet records included</strong>  Complete vaccination and deworming records</li>
-        <li><strong>Microchipped</strong>  Each puppy is microchipped before going home</li>
-        <li><strong>Starter kit provided</strong>  Includes food, blanket with litter scent, and toy</li>
+        <li><strong>Home-raised, not kennel-raised</strong> – Puppies are born and raised in my living room</li>
+        <li><strong>Early socialization</strong> – Exposed to household sounds, gentle handling, and positive experiences</li>
+        <li><strong>Health guarantee</strong> – 2-year genetic health guarantee on every puppy</li>
+        <li><strong>Vet records included</strong> – Complete vaccination and deworming records</li>
+        <li><strong>Microchipped</strong> – Each puppy is microchipped before going home</li>
+        <li><strong>Starter kit provided</strong> – Includes food, blanket with litter scent, and toy</li>
       </ul>
     </div>
 
@@ -564,6 +635,7 @@
 
   <script src="script.js"></script>
   <script>
+    // UPDATED: Homepage featured puppies - No names, no genders displayed
     function renderFeatured() {
       const container = document.getElementById('featuredGrid');
       if(!container) return;
@@ -573,16 +645,20 @@
       }
       const available = puppies.filter(p => p.avail !== 'Reserved').slice(0,6);
       container.innerHTML = available.map(p => `
-        <div class="puppy-card">
+        <div class="home-puppy-card">
           <div class="image-wrapper">
-            <img src="${p.img}" alt="${p.name} - Shih Tzu puppy for sale" loading="lazy">
+            <img src="${p.img}" alt="Adorable Shih Tzu puppy" loading="lazy">
             <span class="badge">${p.avail}</span>
           </div>
           <div class="card-content">
-            <h3 class="puppy-name">${p.name}</h3>
-            <div class="puppy-meta">
-              <span><i class="fas fa-venus-mars"></i> ${p.gender}</span>
-              <span><i class="fas fa-birthday-cake"></i> ${p.age}</span>
+            <div class="puppy-title">Adorable Shih Tzu Puppy</div>
+            <div class="puppy-detail">
+              <i class="fas fa-calendar-week"></i>
+              <span>Age: 8 weeks</span>
+            </div>
+            <div class="puppy-detail">
+              <i class="fas fa-weight-scale"></i>
+              <span>Est. Adult Size: 9-12 lbs</span>
             </div>
             <div class="description">${p.personality}</div>
             <div class="button-group">
